@@ -1,0 +1,11 @@
+﻿@model Employee;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   @* var employee = ViewBag.Employee as AutheDemo.Models.Employee;*@
+}
+
+<h1> Name: @Model.FullName</h1>
+<img src ="@Url.Content("~/"+Model.AvatarPath)" width="200" height="180" />
+<h3> Email: @Model.Email</h3>
+<h3>Department: @Model.Department</h3>
