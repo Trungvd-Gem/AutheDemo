@@ -55,7 +55,7 @@ namespace AutheDemo
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-           
+          
 
 
             app.UseEndpoints(endpoints =>
