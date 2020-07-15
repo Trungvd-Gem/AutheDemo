@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AutheDemo.Models;
+using AutheDemo.ViewModels;
 
 namespace AutheDemo.Controllers
 {
@@ -21,15 +22,23 @@ namespace AutheDemo.Controllers
 
         public ViewResult Index()
         {
-            ViewData["employees"] = employeeRepository.Gets();
-            return View();
+            /*ViewData["employees"] = employeeRepository.Gets();*/
+            var employees = employeeRepository.Gets();
+            return View(employees);
         }
 
         public ViewResult Details(int id)
         {
             /*ViewBag.Employee = employeeRepository.Get(id);*/
-            var employee = employeeRepository.Get(id);
-            return View(employee);
+           /* var employee = employeeRepository.Get(id);
+            ViewBag.TitleName = "Employee Detail";*/
+            var detailViewModel = new HomeDetailViewModel()
+            {
+                Employee = employeeRepository.Get(id),
+                TitleName = "Employee Detail"
+
+            };
+            return View(detailViewModel);
         }
         public IActionResult Privacy()
         {

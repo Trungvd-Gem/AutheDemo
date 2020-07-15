@@ -18,7 +18,7 @@ namespace AutheDemo.Models
                     FullName = " Vu Duc Trung",
                     Department = ".Net IT",
                     Email = "trungvd@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                 new Employee()
@@ -27,7 +27,7 @@ namespace AutheDemo.Models
                     FullName = " Nguyen Van Hung",
                     Department = ".Net IT",
                     Email = "hungnv@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                 new Employee()
@@ -36,7 +36,7 @@ namespace AutheDemo.Models
                     FullName = " Hoang Van Nam",
                     Department = ".Net IT",
                     Email = "Namhv@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                 new Employee()
@@ -45,7 +45,7 @@ namespace AutheDemo.Models
                     FullName = "Nguyen Quy Dat",
                     Department = "Java IT",
                     Email = "DatNQ@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                 new Employee()
@@ -54,7 +54,7 @@ namespace AutheDemo.Models
                     FullName = "Dao Ngoc Duy",
                     Department = "Java IT",
                     Email = "DuyDN@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                 new Employee()
@@ -63,7 +63,7 @@ namespace AutheDemo.Models
                     FullName = " Dao Duc Duyet",
                     Department = "Mobile IT",
                     Email = "DuyetDD@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 },
 
                   new Employee()
@@ -72,7 +72,7 @@ namespace AutheDemo.Models
                     FullName = "Pham Thanh Dat",
                     Department = "Mobile IT",
                     Email = "DatPT@gemvietnam.com",
-                    AvatarPath = "images/gem.png"
+                    AvatarPath = "/images/gem.png"
                 }
             };
         }

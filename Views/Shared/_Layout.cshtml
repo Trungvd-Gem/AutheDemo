@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,10 +9,15 @@
     <title>@ViewData["Title"] - AutheDemo</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark" >
+        <nav class="navbar navbar-expand-sm bg-info navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="~/images/gem.png" alt="Logo" class="rounded-circle" style="width: 40px;height: 40px;" />
@@ -25,7 +33,32 @@
                         <li class="nav-item">
                             <a class="nav-link ">Create</a>
                         </li>
-                    </ul>   
+
+
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li>
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="btn btn-link text-light" style="width: auto;">
+                                        Logout @User.Identity.Name
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+                            </li>
+                        }
+
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -38,7 +71,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - AutheDemo - @DateTime.Now 
+            &copy; 2020 - AutheDemo - @DateTime.Now
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

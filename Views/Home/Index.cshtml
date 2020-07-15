@@ -1,10 +1,12 @@
-﻿@{
-    var employees = ViewData["employees"] as IEnumerable<Employee>;
+﻿@model IEnumerable<Employee>
+@{
+    @*var employees = ViewData["employees"] as IEnumerable<Employee>;*@
+ViewBag.Title = "Employee list";
 
 }
 
     <div class="row">
-        @foreach (var emp in employees)
+        @foreach (var emp in Model)
         {
             <div class="col-sm-4">
                 <div class="card">
